@@ -30,9 +30,9 @@ namespace DemoForm
             myAccount = aAcount;
 
             CustomerNamePanel.TextBoxInput = myAccount.CustomerName;
-            CurrentBalancePanel.TextBoxInput = myAccount.Balance.ToString();
+            CurrentBalancePanel.TextBoxInput = myAccount.CurrentBalance.ToString();
 
-            dataForListBox = new BindingList<Transaction>(myAccount.TransactionList);
+            dataForListBox = new BindingList<Transaction>(myAccount.ListOfTransactions);
             TransactionListBox.DataSource = dataForListBox;
             TransactionListBox.DisplayMember = "Summary";
 
@@ -52,12 +52,12 @@ namespace DemoForm
         {
             int index = TransactionListBox.SelectedIndex;
 
-            Transaction selectedTransaction = myAccount.TransactionList[index];
+            Transaction selectedTransaction = myAccount.ListOfTransactions[index];
            
-            TransactionTypePanel.TextBoxInput = selectedTransaction.TransactionType;
-            TransactionAmountPanel.TextBoxInput = selectedTransaction.TransactionAmount.ToString();
+            TransactionTypePanel.TextBoxInput = selectedTransaction.TransactionTypeString;
+            TransactionAmountPanel.TextBoxInput = selectedTransaction.MoneyAmount.ToString();
             TransactionDatePanel.TextBoxInput = selectedTransaction.TransactionDateString;
-            TransactionLocationPanel.TextBoxInput = selectedTransaction.TransactionLocation;
+            TransactionLocationPanel.TextBoxInput = selectedTransaction.Location;
 
         }
 
@@ -66,21 +66,21 @@ namespace DemoForm
             int transactionType = TransactionTypeComboBox.SelectedIndex;        // 0 = Deposit, 1 = Withdraw
             decimal AmountOfMoney = Convert.ToDecimal(AmountOfTransactionTextBox.Text);
 
-            if (MakeTransactionButton.BackColor == Color.Red && AmountOfMoney == 0)
+            if (MakeTransactionButton.BackColor == Color.Red || AmountOfMoney == 0)
             {
                 return;
             }
             
             if (transactionType == 1)                                           // Withdraw Transaction
             {
-                if (AmountOfMoney <= myAccount.Balance)                        
+                if (AmountOfMoney <= myAccount.CurrentBalance)                        
                 {
                     myAccount.WithdrawMoney(AmountOfMoney);                     
                 }
                 else                                
                 {
                     MessageBox.Show("You dont have enaugh money for this transaction");         // Za mało kasy na koncie
-                    AmountOfTransactionTextBox.Text = myAccount.Balance.ToString();
+                    AmountOfTransactionTextBox.Text = myAccount.CurrentBalance.ToString();
                 }
             }
             else                                                                // Deposit Transaction
@@ -88,7 +88,7 @@ namespace DemoForm
                 myAccount.DepositMoney(AmountOfMoney);               
             }
 
-            CurrentBalancePanel.TextBoxInput = myAccount.Balance.ToString();
+            CurrentBalancePanel.TextBoxInput = myAccount.CurrentBalance.ToString();
             dataForListBox.ResetBindings();
         }
 

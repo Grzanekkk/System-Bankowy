@@ -14,3 +14,4 @@ C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\Ba
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.AssemblyInfo.cs
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.dll
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.AssemblyInfoInputs.cache
