@@ -1,0 +1,16 @@
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.deps.json
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.dll
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.pdb
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.csprojAssemblyReference.cache
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.AssemblyInfo.cs
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.dll
+C:\Users\Jasio\Desktop\Programowanie\Ćwiczenia\BankClassLibrary\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.deps.json
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\bin\Debug\netstandard1.4\BankClassLibrary.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.csprojAssemblyReference.cache
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.csproj.CoreCompileInputs.cache
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.AssemblyInfo.cs
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\BankClassLibrary\obj\Debug\netstandard1.4\BankClassLibrary.pdb
