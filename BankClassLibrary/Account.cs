@@ -8,7 +8,20 @@ namespace BankClassLibrary
         #region Zmienne i właściwości
 
 
+        private const string EMPTY_ADDRESS = "UNKNOWN";
+        private const string EMPTY_PHONE = "UNKNOWN";
+
+        Customer _AccountCustomer;
+
+        decimal _CurrentBalance;                      // Ammount of money on account
+
         int _AccountNumber;                           // Unique Account ID
+
+        public static decimal KursWymiany = 1.1m;
+
+        List<Transaction> _ListOfTransactions;        // Lista wszystkich transakcji na koncie
+
+
         public int AccountNumber
         {
             get
@@ -16,12 +29,6 @@ namespace BankClassLibrary
                 return _AccountNumber;
             }
         }
-
-        private const string EMPTY_ADDRESS = "UNKNOWN";
-        private const string EMPTY_PHONE = "UNKNOWN";
-
-        Customer _AccountCustomer;
-
 
         public string CustomerPhoneNumber
         {
@@ -55,6 +62,22 @@ namespace BankClassLibrary
             }
         }
 
+        public string BirthDateString
+        {
+            get
+            {
+                return _AccountCustomer.DateOfBirth.ToString("dd/MM/yyyy hh:mm:dd");
+            }
+        }
+
+        public DateTime BirthDate
+        {
+            get
+            {
+                return _AccountCustomer.DateOfBirth;
+            }
+        }
+
         public string CustomerName
         {
             get
@@ -63,7 +86,6 @@ namespace BankClassLibrary
             }
         }
 
-        decimal _CurrentBalance;                      // Ammount of money on account
         public decimal CurrentBalance
         {
             get
@@ -72,7 +94,6 @@ namespace BankClassLibrary
             }
         }
 
-        public static decimal KursWymiany = 1.1m;
         public decimal CurrentBalanceInForeignCurrency
         {
             get
@@ -81,8 +102,6 @@ namespace BankClassLibrary
             }
         }
 
-        List<Transaction> _ListOfTransactions;        // Lista wszystkich transakcji na koncie
-
         public List<Transaction> ListOfTransactions
         {
             get
@@ -90,6 +109,7 @@ namespace BankClassLibrary
                 return _ListOfTransactions;
             }
         }
+
         public Transaction LastTransaction
         {
             get

@@ -8,10 +8,10 @@ namespace BankClassLibrary
     {
         #region Zmienne
 
-        public string CustomerName;                    // The name of account holder
-        DateTime DateOfBirth;
-        public string PhoneNumber;
-        public string Address;
+        public string CustomerName;                    // The name of account holder        // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        public DateTime DateOfBirth;                                                        // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        public string PhoneNumber;                                                          // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        public string Address;                                                              // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
 
         #endregion Zmienne
 

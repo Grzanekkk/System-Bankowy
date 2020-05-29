@@ -61,13 +61,18 @@ namespace DemoForm
 
             // File name        CustomerName.dat
             // Pierwsza linia   CustomerName_BirthDate_Phone
-            // Kolejne linie    AddressLine1\nAddressLine2\nAddressLine3 ...
+            // Kolejne linie    Ulica\nMiasto\nKodPocztowy ...
 
-            
+            FileInfo fileInfoObject = new FileInfo($"{CustomerStorageDir}\\{aAccount.CustomerName}.dat");
+
+            using (StreamWriter sw = fileInfoObject.CreateText())
+            {
+                sw.WriteLine($"{aAccount.CustomerName}_{aAccount.}")
+            }
 
 
 
-            return false;
+                return false;
         }
 
     }
