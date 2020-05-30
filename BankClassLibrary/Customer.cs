@@ -6,32 +6,75 @@ namespace BankClassLibrary
 {
     public class Customer
     {
-        #region Zmienne
+        #region Pola i właściwości
 
-        public string CustomerName;                    // The name of account holder        // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public DateTime DateOfBirth;                                                        // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public string PhoneNumber;                                                          // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        public string Address;                                                              // DO ZMIANY NA PROPERTISY !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // Fields / Pola
+        string _CustomerName;                    // Imie i nazwisko właściciela konta    
+        DateTime _DateOfBirth;
+        string _PhoneNumber;                                                          
+        string _Address;                                                              
 
-        #endregion Zmienne
+        // Properties / właściwości
+        public string CustomerName
+        {
+            get
+            {
+                return _CustomerName;
+            }
+        }
+        public string PhoneNumber
+        {
+            get
+            {
+                return _PhoneNumber;
+            }
+
+            set
+            {
+                _PhoneNumber = value;
+            }
+        }
+        public DateTime DateOfBirth
+        {
+            get
+            {
+                return _DateOfBirth;
+            }
+        }
+        public string Address
+        {
+            get
+            {
+                return _Address;
+            }
+
+            set
+            {
+                _Address = value;
+            }
+        }
+
+        #endregion 
 
         #region Konstruktory
 
+
+        // Regular constructor    
         public Customer(string aCustomerName, DateTime aDateOfBirht, string aPhoneNumber = null, string aAdress = null)
         {
-            CustomerName = aCustomerName;
-            DateOfBirth = aDateOfBirht;
-            PhoneNumber = aPhoneNumber;
-            Address = aAdress; 
+            _CustomerName = aCustomerName;
+            _DateOfBirth = aDateOfBirht;
+            _PhoneNumber = aPhoneNumber;
+            _Address = aAdress; 
         }
 
         // Copy constructor
         public Customer(Customer aCustomer)
         {
-            CustomerName = aCustomer.CustomerName;
-            DateOfBirth = aCustomer.DateOfBirth;
-            PhoneNumber = aCustomer.PhoneNumber;
-            Address = aCustomer.Address;
+            _CustomerName = aCustomer.CustomerName;
+            _DateOfBirth = aCustomer.DateOfBirth;
+            _PhoneNumber = aCustomer.PhoneNumber;
+            _Address = aCustomer.Address;
         }
 
         #endregion Konstrutkory

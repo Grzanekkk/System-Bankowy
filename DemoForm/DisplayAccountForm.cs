@@ -73,14 +73,14 @@ namespace DemoForm
             
             if (transactionType == 1)                                           // Withdraw Transaction
             {
-                if (AmountOfMoney <= myAccount.CurrentBalance)                        
+                if (AmountOfMoney > myAccount.CurrentBalance || myAccount.CurrentBalance == 0)   // PRZY 2x TRUE NIE WYKOUJE SIĘ  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     
                 {
-                    myAccount.WithdrawMoney(AmountOfMoney);                     
+                    MessageBox.Show("You dont have enaugh money for this transaction");         // Za mało kasy na koncie
+                    AmountOfTransactionTextBox.Text = myAccount.CurrentBalance.ToString();                                        
                 }
                 else                                
                 {
-                    MessageBox.Show("You dont have enaugh money for this transaction");         // Za mało kasy na koncie
-                    AmountOfTransactionTextBox.Text = myAccount.CurrentBalance.ToString();
+                    myAccount.WithdrawMoney(AmountOfMoney);
                 }
             }
             else                                                                // Deposit Transaction
@@ -99,7 +99,6 @@ namespace DemoForm
 
 
         #endregion Eventy
-
 
     }
 }

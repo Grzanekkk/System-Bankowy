@@ -67,7 +67,7 @@ namespace DemoForm
 
             using (StreamWriter sw = fileInfoObject.CreateText())
             {
-                sw.WriteLine($"{aAccount.CustomerName}_{aAccount.}")
+                sw.WriteLine($"{aAccount.CustomerName}_{aAccount.BirthDateString}_{aAccount.CustomerPhoneNumber}");
             }
 
 

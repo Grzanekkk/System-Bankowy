@@ -13,7 +13,7 @@ namespace DemoForm
 {
     public partial class CreateAccountForm : Form
     {
-        #region Właściwości + Konstruktor
+        #region Właściwości + Initializer
 
         private string PhoneTextInput
         {
@@ -45,13 +45,12 @@ namespace DemoForm
             }
         }
 
-
         public CreateAccountForm()
         {
             InitializeComponent();
         }
 
-        #endregion Właściwości + Konstruktor
+        #endregion Właściwości + Initializer
 
         #region Eventy
 
