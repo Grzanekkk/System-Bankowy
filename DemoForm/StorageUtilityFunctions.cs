@@ -36,6 +36,8 @@ namespace DemoForm
 
         public static Account GetLastAccount()
         {
+            Account lastAccount = new Account();                    // W trakcie tworzenia
+
             return null;
         }
 
@@ -68,6 +70,13 @@ namespace DemoForm
             using (StreamWriter sw = fileInfoObject.CreateText())
             {
                 sw.WriteLine($"{aAccount.CustomerName}_{aAccount.BirthDateString}_{aAccount.CustomerPhoneNumber}");
+
+                string[] addressLines = aAccount.CustomerAddress.Split(new char[] { '\r', '\n' });
+
+                foreach(string addressLine in addressLines)
+                {
+                    sw.WriteLine(addressLine);
+                }
             }
 
 
