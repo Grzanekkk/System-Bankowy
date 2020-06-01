@@ -9,7 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using static BankClassLibrary.Account;
-using DemoAccount;
+using UsefullTools;
 
 namespace DemoForm
 {
@@ -42,7 +42,7 @@ namespace DemoForm
 
         private void DisplayAccountForm_Load(object sender, EventArgs e)
         {
-            AmountOfTransactionTextBox.KeyPress += DemoAccount.UtilityMethods.OnlyMoneyAllowed;
+            AmountOfTransactionTextBox.KeyPress += UsefullTools.UtilityMethods.OnlyMoneyAllowed;
         }
 
 

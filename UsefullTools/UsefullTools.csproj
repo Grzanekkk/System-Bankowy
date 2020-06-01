@@ -4,17 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{3E594BAC-D7C9-4E9A-81A3-58D9043E7AFF}</ProjectGuid>
-    <OutputType>Exe</OutputType>
-    <RootNamespace>DemoAccount</RootNamespace>
-    <AssemblyName>DemoAccount</AssemblyName>
+    <ProjectGuid>{3FA01C4F-5E3A-43E9-B9AB-E342B26E481F}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>UsefullTools</RootNamespace>
+    <AssemblyName>UsefullTools</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
-    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -24,7 +24,6 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -44,20 +43,14 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="App.config" />
+    <Compile Include="StorageUtilityFunctions.cs" />
+    <Compile Include="UtilityMethods.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\BankClassLibrary\BankClassLibrary.csproj">
       <Project>{bc42c276-7599-438c-8fd6-e910e03843a8}</Project>
       <Name>BankClassLibrary</Name>
-    </ProjectReference>
-    <ProjectReference Include="..\UsefullTools\UsefullTools.csproj">
-      <Project>{3fa01c4f-5e3a-43e9-b9ab-e342b26e481f}</Project>
-      <Name>UsefullTools</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

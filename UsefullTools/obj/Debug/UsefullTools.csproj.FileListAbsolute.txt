@@ -1,0 +1,6 @@
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.csprojAssemblyReference.cache
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.csproj.CoreCompileInputs.cache
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\bin\Debug\UsefullTools.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\bin\Debug\UsefullTools.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.pdb

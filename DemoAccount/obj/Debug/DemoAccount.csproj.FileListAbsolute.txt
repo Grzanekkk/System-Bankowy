@@ -18,3 +18,5 @@ C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\De
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoAccount\obj\Debug\DemoAccount.csproj.CopyComplete
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoAccount\obj\Debug\DemoAccount.exe
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoAccount\obj\Debug\DemoAccount.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoAccount\bin\Debug\UsefullTools.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoAccount\bin\Debug\UsefullTools.pdb

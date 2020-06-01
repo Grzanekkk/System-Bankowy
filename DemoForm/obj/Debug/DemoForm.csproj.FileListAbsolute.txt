@@ -31,3 +31,5 @@ C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\De
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoForm\bin\Debug\DemoAccount.exe
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoForm\bin\Debug\DemoAccount.pdb
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoForm\bin\Debug\DemoAccount.exe.config
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoForm\bin\Debug\UsefullTools.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\DemoForm\bin\Debug\UsefullTools.pdb

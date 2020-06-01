@@ -5,11 +5,16 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DemoAccount
+namespace UsefullTools
 {
     // A class to hold common funcions
     public static class UtilityMethods
     {
+        public static string dateTimeFormat = "dd/MM/yyyy hh:mm:dd";
+
+
+
+
         // Text input
         public static string ReadTextInput(string aMassage)
         {
