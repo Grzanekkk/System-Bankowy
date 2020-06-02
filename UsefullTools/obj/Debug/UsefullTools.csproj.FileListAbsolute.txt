@@ -4,3 +4,6 @@ C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\Us
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\bin\Debug\UsefullTools.pdb
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.dll
 C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\bin\Debug\BankClassLibrary.dll
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\bin\Debug\BankClassLibrary.pdb
+C:\Users\Jasio\Desktop\Programowanie\SystemBankowyRepozytorium\System-Bankowy\UsefullTools\obj\Debug\UsefullTools.csproj.CopyComplete

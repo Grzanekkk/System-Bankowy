@@ -160,23 +160,29 @@ namespace BankClassLibrary
 
             for (int i = 0; i < aAcconutToCopy._ListOfTransactions.Capacity; i++)
             {
-                // ListOfTransactions[i] = aAcconutToCopy.ListOfTransactions[i];    To też powinno działać.
                  _ListOfTransactions.Add(aAcconutToCopy._ListOfTransactions[i]);
             }
 
-            // Skrót
-            // ListOfTransactions = new List<Transaction>(aAcconutToCopy.ListOfTransactions);
-
-            // Copy customer
             _AccountCustomer = new Customer(aAcconutToCopy._AccountCustomer);
         }
 
-        //Constructor
+        // Constructor
         public Account(Customer aAccountCustomer)
         {
             _AccountCustomer = aAccountCustomer;
 
             _AccountNumber = Guid.NewGuid().GetHashCode();
+
+            _CurrentBalance = 0;
+            _ListOfTransactions = new List<Transaction>();
+        }
+
+        // Read From File Constructor
+        public Account(int aAccountID, string aCustomerName, DateTime aDateOfBirth, string aPhoneNumber, string aAdress)
+        {
+            _AccountCustomer = new Customer(aCustomerName, aDateOfBirth, aPhoneNumber, aAdress);
+
+            _AccountNumber = aAccountID;
 
             _CurrentBalance = 0;
             _ListOfTransactions = new List<Transaction>();
@@ -188,7 +194,7 @@ namespace BankClassLibrary
 
         #region Metody
 
-       
+
         public bool DepositMoney(decimal aAmount)
         {
             bool isSucces = false;
@@ -219,6 +225,21 @@ namespace BankClassLibrary
             isSucces = true;
 
             return isSucces;
+        }
+
+        public void AddTransaction(Transaction newTransaction)
+        {
+            _ListOfTransactions.Add(newTransaction);
+
+            switch(newTransaction.TransactionTypeString)
+            {
+                case "Deposit":
+                    _CurrentBalance += newTransaction.MoneyAmount;
+                    break;
+                case "Withdraw":
+                    _CurrentBalance -= newTransaction.MoneyAmount;
+                    break;
+            }
         }
 
 

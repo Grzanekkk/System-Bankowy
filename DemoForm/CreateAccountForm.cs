@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UsefullTools;
 
 namespace DemoForm
 {
@@ -80,7 +81,11 @@ namespace DemoForm
             newAccount.DepositMoney(1000);
             newAccount.WithdrawMoney(500);
 
-            DisplayAccountForm displayAccount = new DisplayAccountForm(newAccount);
+            StorageUtilityFunctions.SaveAccount(newAccount);
+
+            Account lastAccount = StorageUtilityFunctions.GetLastAccount();
+
+            DisplayAccountForm displayAccount = new DisplayAccountForm(lastAccount);
 
             this.Hide();
             displayAccount.ShowDialog();

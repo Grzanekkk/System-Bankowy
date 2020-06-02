@@ -104,10 +104,6 @@
       <Project>{bc42c276-7599-438c-8fd6-e910e03843a8}</Project>
       <Name>BankClassLibrary</Name>
     </ProjectReference>
-    <ProjectReference Include="..\DemoAccount\DemoAccount.csproj">
-      <Project>{3e594bac-d7c9-4e9a-81a3-58d9043e7aff}</Project>
-      <Name>DemoAccount</Name>
-    </ProjectReference>
     <ProjectReference Include="..\UsefullTools\UsefullTools.csproj">
       <Project>{3fa01c4f-5e3a-43e9-b9ab-e342b26e481f}</Project>
       <Name>UsefullTools</Name>

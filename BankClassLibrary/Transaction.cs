@@ -13,7 +13,7 @@ namespace BankClassLibrary
         DateTime _DateOfTransaction;
         string _Location;
 
-        TypeOfTransaction TypeOfTransaction;       // Emun mogący mieć wartość deposit / withdraw   
+        TypeOfTransaction _TypeOfTransaction;       // Emun mogący mieć wartość deposit / withdraw   
 
         public decimal MoneyAmount
         {
@@ -40,7 +40,7 @@ namespace BankClassLibrary
         {
             get
             {
-                return (TypeOfTransaction == TypeOfTransaction.DEPOSIT ? "Deposit" : "Withdraw");
+                return (_TypeOfTransaction == TypeOfTransaction.DEPOSIT ? "Deposit" : "Withdraw");
             }
         }
         public string TransactionDateString
@@ -72,10 +72,10 @@ namespace BankClassLibrary
 
 
         // Regular
-        public Transaction(TypeOfTransaction aTypeOfTransaction, decimal aAmmountOfTransaction)
+        public Transaction(TypeOfTransaction aTypeOfTransaction, decimal aAmountOfTransaction)
         {
-            TypeOfTransaction = aTypeOfTransaction;
-            _MoneyAmount = aAmmountOfTransaction;
+            _TypeOfTransaction = aTypeOfTransaction;
+            _MoneyAmount = aAmountOfTransaction;
             _DateOfTransaction = DateTime.Now;
             _Location = "EARTH";
         }
@@ -83,16 +83,34 @@ namespace BankClassLibrary
         // Default
         public Transaction()
         {
-            TypeOfTransaction = 0;
+            _TypeOfTransaction = 0;
             _MoneyAmount = 0;
             _DateOfTransaction = new DateTime(0000, 00, 00);
             _Location = "UNKNOWN";
         }
 
+        // Do wczytywania z pliku
+        public Transaction(string aTypeOfTransaction, decimal aAmountOfTransaction, DateTime aDateOfTransactioin, string aLocation)
+        {
+            _MoneyAmount = aAmountOfTransaction;
+            _DateOfTransaction = aDateOfTransactioin;
+            _Location = aLocation;
+
+            switch(aTypeOfTransaction)
+            {
+                case "Deposit":
+                    _TypeOfTransaction = TypeOfTransaction.DEPOSIT;
+                    break;
+                case "Withdraw":
+                    _TypeOfTransaction = TypeOfTransaction.WITHDRAW;
+                    break;
+            }    
+        }
+
         // Copy 
         public Transaction(Transaction copyTransaction)
         {
-            TypeOfTransaction = copyTransaction.TypeOfTransaction;
+            _TypeOfTransaction = copyTransaction._TypeOfTransaction;
             _MoneyAmount = copyTransaction._MoneyAmount;
             _DateOfTransaction = copyTransaction._DateOfTransaction;
             _Location = copyTransaction._Location;
