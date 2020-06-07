@@ -21,6 +21,10 @@ namespace BankClassLibrary
             {
                 return _CustomerName;
             }
+            set
+            {
+                _CustomerName = value;
+            }
         }
         public string PhoneNumber
         {

@@ -78,8 +78,14 @@ namespace DemoForm
 
             Account newAccount = new Account(customerName, birthDate, phoneNumber, address);
 
+            CheckingAccount newCheckingAccount = new CheckingAccount(-1, customerName, birthDate, phoneNumber, address);
+
             newAccount.DepositMoney(1000);
             newAccount.WithdrawMoney(500);
+
+            newAccount.DisplayAccountInfo();
+            newCheckingAccount.DisplayAccountInfo();
+
 
             StorageUtilityFunctions.SaveAccount(newAccount);
 

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 
 namespace BankClassLibrary
 {
-    public class Account                     // Informacje personalne klienta
+    public class Account : AccountBase                     // Informacje personalne klienta
     {
         #region Zmienne i właściwości
 
@@ -11,22 +11,25 @@ namespace BankClassLibrary
         private const string EMPTY_ADDRESS = "UNKNOWN";
         private const string EMPTY_PHONE = "UNKNOWN";
 
-        Customer _AccountCustomer;
+        private Customer _AccountCustomer;
 
-        decimal _CurrentBalance;                      // Ammount of money on account
+        private decimal _CurrentBalance;                      // Ammount of money on account
 
-        int _AccountNumber;                           // Unique Account ID
+        private int _AccountID;                               // Unique Account ID
 
-        public static decimal KursWymiany = 1.1m;
+        private static decimal _KursWymiany = 1.1m;
 
-        List<Transaction> _ListOfTransactions;        // Lista wszystkich transakcji na koncie
+        private List<Transaction> _ListOfTransactions;        // Lista wszystkich transakcji na koncie
+
+        private double _Commission;
 
 
-        public int AccountNumber
+
+        public override int AccountID
         {
             get
             {
-                return _AccountNumber;
+                return _AccountID;
             }
         }
 
@@ -78,15 +81,19 @@ namespace BankClassLibrary
             }
         }
 
-        public string CustomerName
+        public override string CustomerName
         {
             get
             {
                 return _AccountCustomer.CustomerName;
             }
+            set
+            {
+                _AccountCustomer.CustomerName = value;
+            }
         }
 
-        public decimal CurrentBalance
+        public override decimal CurrentBalance
         {
             get
             {
@@ -94,11 +101,23 @@ namespace BankClassLibrary
             }
         }
 
+        public override double Commission 
+        { 
+            get 
+            {
+                return _Commission;
+            }
+            set
+            {
+                _Commission = value;
+            }
+        }
+
         public decimal CurrentBalanceInForeignCurrency
         {
             get
             {
-                return _CurrentBalance * KursWymiany;
+                return _CurrentBalance * _KursWymiany;
             }
         }
 
@@ -133,7 +152,7 @@ namespace BankClassLibrary
         {
             _AccountCustomer = new Customer(aCustomerName, aDateOfBirth, aPhoneNumber, aAdress);
 
-            _AccountNumber = Guid.NewGuid().GetHashCode();
+            _AccountID = Guid.NewGuid().GetHashCode();
 
             _CurrentBalance = 0;
             _ListOfTransactions = new List<Transaction>();
@@ -144,7 +163,7 @@ namespace BankClassLibrary
         {
             _AccountCustomer = new Customer("Admin", new DateTime(2000, 1, 1), null, null);
 
-            _AccountNumber = Guid.NewGuid().GetHashCode();
+            _AccountID = Guid.NewGuid().GetHashCode();
 
             _CurrentBalance = 0;
             _ListOfTransactions = new List<Transaction>();
@@ -153,7 +172,7 @@ namespace BankClassLibrary
         // Copy Constructor
         public Account(Account aAcconutToCopy)
         {
-            _AccountNumber = aAcconutToCopy.AccountNumber;
+            _AccountID = aAcconutToCopy.AccountID;
             _CurrentBalance = aAcconutToCopy._CurrentBalance;
 
             _ListOfTransactions = new List<Transaction>();
@@ -171,7 +190,7 @@ namespace BankClassLibrary
         {
             _AccountCustomer = aAccountCustomer;
 
-            _AccountNumber = Guid.NewGuid().GetHashCode();
+            _AccountID = Guid.NewGuid().GetHashCode();
 
             _CurrentBalance = 0;
             _ListOfTransactions = new List<Transaction>();
@@ -182,7 +201,7 @@ namespace BankClassLibrary
         {
             _AccountCustomer = new Customer(aCustomerName, aDateOfBirth, aPhoneNumber, aAdress);
 
-            _AccountNumber = aAccountID;
+            _AccountID = aAccountID;
 
             _CurrentBalance = 0;
             _ListOfTransactions = new List<Transaction>();
@@ -195,7 +214,7 @@ namespace BankClassLibrary
         #region Metody
 
 
-        public bool DepositMoney(decimal aAmount)
+        public override bool DepositMoney(decimal aAmount)
         {
             bool isSucces = false;
 
@@ -210,7 +229,7 @@ namespace BankClassLibrary
             return isSucces;
         }
 
-        public bool WithdrawMoney(decimal aAmount)
+        public override bool WithdrawMoney(decimal aAmount)
         {
             bool isSucces = false;
 
@@ -241,6 +260,12 @@ namespace BankClassLibrary
                     break;
             }
         }
+
+        public virtual void DisplayAccountInfo()
+        {
+            Console.WriteLine($"Account ID: {_AccountID}. Current balance {_CurrentBalance}. Regular account type");
+        }
+
 
 
         #endregion Metody

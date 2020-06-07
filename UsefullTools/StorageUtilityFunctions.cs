@@ -142,9 +142,9 @@ namespace UsefullTools
 
             CheckMainDirectorys();
 
-            using (StreamWriter sw = File.CreateText(TransactionStorageDir + "\\" + aAccount.AccountNumber + ".dat"))
+            using (StreamWriter sw = File.CreateText(TransactionStorageDir + "\\" + aAccount.AccountID + ".dat"))
             {
-                sw.WriteLine($"{aAccount.AccountNumber};{aAccount.CustomerName}");
+                sw.WriteLine($"{aAccount.AccountID};{aAccount.CustomerName}");
 
                 foreach(Transaction tr in aAccount.ListOfTransactions)
                 {
