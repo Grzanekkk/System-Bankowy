@@ -5,7 +5,7 @@ using System.Text;
 namespace BankClassLibrary
 {    
 
-    class SavingAccount : Account
+    public class SavingAccount : Account
     {
 
         #region Konstruktory
@@ -14,12 +14,13 @@ namespace BankClassLibrary
         public SavingAccount() : base()                // Defultowy konstruktor klasy account jast wywoływany w momencie wywoływanie defultowego konstruktora klas które z niego dziedziczą
         {
             // Dodatkowe przypisywania
+            Commission = 0.003m;
         }
 
         public SavingAccount(int aAccountID, string aCustomerName, DateTime aDateOfBirth, string aPhoneNumber, string aAdress) :
             base(aAccountID, aCustomerName, aDateOfBirth, aPhoneNumber, aAdress)
         {
-
+            Commission = 0.003m;
         }
 
 
@@ -27,14 +28,16 @@ namespace BankClassLibrary
 
         #region Metody
 
-        public override bool DepositMoney(decimal aAmount)
-        {
-            return base.DepositMoney(aAmount);                  // Return the base method`s result 
+        public override void DepositMoney(decimal aAmount)
+        { 
+            base.DepositMoney(aAmount);                  // Return the base method`s result 
         }
 
-        public override bool WithdrawMoney(decimal aAmount)
+        public override void WithdrawMoney(decimal aAmount)
         {
-            return base.WithdrawMoney(aAmount);
+            decimal amountAfterCommission = aAmount + aAmount * Commission;
+
+            base.WithdrawMoney(amountAfterCommission);
         }
 
         public override void DisplayAccountInfo()

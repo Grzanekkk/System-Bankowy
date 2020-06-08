@@ -76,25 +76,27 @@ namespace DemoForm
             string phoneNumber = PhoneTextInput;
             string address = AddressTextInput;
 
-            Account newAccount = new Account(customerName, birthDate, phoneNumber, address);
+            //Account newAccount = new Account(customerName, birthDate, phoneNumber, address);
 
             CheckingAccount newCheckingAccount = new CheckingAccount(-1, customerName, birthDate, phoneNumber, address);
 
-            newAccount.DepositMoney(1000);
-            newAccount.WithdrawMoney(500);
-
-            newAccount.DisplayAccountInfo();
-            newCheckingAccount.DisplayAccountInfo();
+            SavingAccount newSavingAccount = new SavingAccount(-1, customerName, birthDate, phoneNumber, address);
 
 
-            StorageUtilityFunctions.SaveAccount(newAccount);
+
+            //StorageUtilityFunctions.SaveAccount(newAccount);
 
             Account lastAccount = StorageUtilityFunctions.GetLastAccount();
 
-            DisplayAccountForm displayAccount = new DisplayAccountForm(lastAccount);
+            DisplayAccountForm displayAccount = new DisplayAccountForm(newSavingAccount);
+            DisplayAccountForm displayAccount1 = new DisplayAccountForm(newCheckingAccount);
+
+            displayAccount1.Text = "Checking Account";
+            displayAccount.Text = "Saving Account";
 
             this.Hide();
-            displayAccount.ShowDialog();
+            displayAccount.Show();
+            displayAccount1.Show();
             this.Show();
 
             // MessageBox.Show($"Account of customer {customerName} has been created.");

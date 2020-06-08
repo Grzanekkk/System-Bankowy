@@ -115,10 +115,20 @@ namespace UsefullTools
                     DateTime transactionDate = DateTime.ParseExact(transactioinParts[2], UtilityMethods.dateTimeFormat, null);
                     string transactionLocation = transactioinParts[3];
 
-                    Transaction fileTransaction = new Transaction(transactionType, transactionAmount, transactionDate, transactionLocation);
+                    switch (transactionType)
+                    {
+                        case "Deposit":
+                            lastAccount.DepositMoney(transactionAmount, transactionDate, transactionLocation);
+                            break;
+                        case "Withdraw":
+                            lastAccount.WithdrawMoney(transactionAmount, transactionDate, transactionLocation);
+                            break;
+                    }
+
+                    
 
                     // lastAccount.ListOfTransactions.Add(fileTransaction);
-                    lastAccount.AddTransaction(fileTransaction);
+                    // lastAccount.AddTransaction(fileTransaction);
 
                     nextLine = ReadNextLine(srTransaction);
                 }                         

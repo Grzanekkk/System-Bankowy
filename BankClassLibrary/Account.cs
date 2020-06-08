@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Runtime.CompilerServices;
 
 namespace BankClassLibrary
 {
@@ -21,7 +22,7 @@ namespace BankClassLibrary
 
         private List<Transaction> _ListOfTransactions;        // Lista wszystkich transakcji na koncie
 
-        private double _Commission;
+        private decimal _Commission;
 
 
 
@@ -101,7 +102,7 @@ namespace BankClassLibrary
             }
         }
 
-        public override double Commission 
+        public override decimal Commission 
         { 
             get 
             {
@@ -214,39 +215,38 @@ namespace BankClassLibrary
         #region Metody
 
 
-        public override bool DepositMoney(decimal aAmount)
-        {
-            bool isSucces = false;
-
+        public override void DepositMoney(decimal aAmount)
+        { 
             _CurrentBalance += aAmount;
 
             Transaction myTransaction = new Transaction(TypeOfTransaction.DEPOSIT, aAmount);
 
             _ListOfTransactions.Add(myTransaction);
-
-            isSucces = true;
-
-            return isSucces;
         }
 
-        public override bool WithdrawMoney(decimal aAmount)
+        public void DepositMoney(decimal transactionAmount, DateTime transactionDate, string transactionLocation)
         {
-            bool isSucces = false;
+            Transaction newTransaction = new Transaction("Deposit", transactionAmount, transactionDate, transactionLocation);
+            AddTransaction(newTransaction);
+        }
 
+        public override void WithdrawMoney(decimal aAmount)
+        {
             _CurrentBalance -= aAmount;
-
-            // 5. Create withdraw transaction and add it to the list
 
             Transaction myTransaction = new Transaction(TypeOfTransaction.WITHDRAW, aAmount);
 
             _ListOfTransactions.Add(myTransaction);
-
-            isSucces = true;
-
-            return isSucces;
         }
 
-        public void AddTransaction(Transaction newTransaction)
+        public void WithdrawMoney(decimal transactionAmount, DateTime transactionDate, string transactionLocation)
+        {
+            Transaction newTransaction = new Transaction("Withdraw", transactionAmount, transactionDate, transactionLocation);
+            AddTransaction(newTransaction);
+        }
+
+
+        protected sealed override void AddTransaction(Transaction newTransaction)
         {
             _ListOfTransactions.Add(newTransaction);
 
