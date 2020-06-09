@@ -4,7 +4,7 @@ using System.Runtime.CompilerServices;
 
 namespace BankClassLibrary
 {
-    public class Account : AccountBase                     // Informacje personalne klienta
+    public class Account : AccountBase, IAccountValidateTable                     // Informacje personalne klienta
     {
         #region Zmienne i właściwości
 
@@ -264,6 +264,30 @@ namespace BankClassLibrary
         public virtual void DisplayAccountInfo()
         {
             Console.WriteLine($"Account ID: {_AccountID}. Current balance {_CurrentBalance}. Regular account type");
+        }
+
+        // Methods for balidating a created account
+        public bool IsCustomerNameValid(string aCustomerName)
+        {
+            if (!string.IsNullOrEmpty(aCustomerName) && aCustomerName.Length > 5 && aCustomerName.Length < 30)
+                return true;
+            else
+                return false;
+        }
+        public bool IsBirthDateValid(DateTime aBirthDate)
+        {
+            if (DateTime.Compare(aBirthDate, new DateTime(DateTime.Now.Year - 18, 12, 31)) == 1)
+                return true;
+            else
+                return false;
+        }
+        public virtual bool IsDepositeMoneyRequestValid(decimal aMoneyAmount)               // Obie te matody mają być rozpisane w dziueciczących klasach
+        {
+            return true;
+        }
+        public virtual bool IsWithdrawMoneyRequestValid(decimal aMoneyAmount)
+        {
+            return true;
         }
 
 
