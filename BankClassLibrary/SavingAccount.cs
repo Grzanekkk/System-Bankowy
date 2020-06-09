@@ -7,6 +7,8 @@ namespace BankClassLibrary
 
     public class SavingAccount : Account
     {
+        const decimal MAX_WITHDRAW = 500;
+
 
         #region Konstruktory
 
@@ -28,22 +30,39 @@ namespace BankClassLibrary
 
         #region Metody
 
-        public override void DepositMoney(decimal aAmount)
+        public override bool DepositMoney(decimal aAmount)
         { 
-            base.DepositMoney(aAmount);                  // Return the base method`s result 
+            return base.DepositMoney(aAmount);                  // Return the base method`s result 
         }
 
-        public override void WithdrawMoney(decimal aAmount)
+        public override bool WithdrawMoney(decimal aAmount)
         {
+            if (!IsWithdrawMoneyRequestValid(aAmount))
+            {
+                return false;
+            }
+
             decimal amountAfterCommission = aAmount + aAmount * Commission;
 
-            base.WithdrawMoney(amountAfterCommission);
+            return base.WithdrawMoney(amountAfterCommission);
         }
 
         public override void DisplayAccountInfo()
         {
             Console.WriteLine($"Checking Account Balance: {CurrentBalance}, Commission: {Commission}");
         }
+
+
+        public override bool IsWithdrawMoneyRequestValid(decimal aMoneyAmount)
+        {
+            if (aMoneyAmount > MAX_WITHDRAW)
+            {
+                return false;
+            }
+            return true;
+        }
+
+
 
         #endregion Metody
     }

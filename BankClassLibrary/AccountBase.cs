@@ -10,8 +10,8 @@ namespace BankClassLibrary
         public abstract string CustomerName { get; set; }
         public abstract decimal CurrentBalance { get; }
         public abstract decimal Commission { get; set; }         // Prowizja dla banku
-        public abstract void DepositMoney(decimal aAmount);
-        public abstract void WithdrawMoney(decimal aAmount);
+        public abstract bool DepositMoney(decimal aAmount);
+        public abstract bool WithdrawMoney(decimal aAmount);
         protected abstract void AddTransaction(Transaction aNewTransaction);
     }
 }

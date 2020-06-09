@@ -215,28 +215,45 @@ namespace BankClassLibrary
         #region Metody
 
 
-        public override void DepositMoney(decimal aAmount)
-        { 
+        public override bool DepositMoney(decimal aAmount)
+        {
+            bool isSuccess = true;
+
             _CurrentBalance += aAmount;
 
             Transaction myTransaction = new Transaction(TypeOfTransaction.DEPOSIT, aAmount);
 
             _ListOfTransactions.Add(myTransaction);
+
+            return isSuccess;
         }
 
-        public void DepositMoney(decimal transactionAmount, DateTime transactionDate, string transactionLocation)
+        public bool DepositMoney(decimal transactionAmount, DateTime transactionDate, string transactionLocation)
         {
             Transaction newTransaction = new Transaction("Deposit", transactionAmount, transactionDate, transactionLocation);
             AddTransaction(newTransaction);
+
+            return true;
         }
 
-        public override void WithdrawMoney(decimal aAmount)
+        public override bool WithdrawMoney(decimal aAmount)
         {
+            bool isSuccess = true;
+
+            if (_CurrentBalance < aAmount)
+            {
+                return false;
+            }
+
+            
             _CurrentBalance -= aAmount;
 
             Transaction myTransaction = new Transaction(TypeOfTransaction.WITHDRAW, aAmount);
-
             _ListOfTransactions.Add(myTransaction);
+            
+
+
+            return isSuccess;
         }
 
         public void WithdrawMoney(decimal transactionAmount, DateTime transactionDate, string transactionLocation)
@@ -281,7 +298,7 @@ namespace BankClassLibrary
             else
                 return false;
         }
-        public virtual bool IsDepositeMoneyRequestValid(decimal aMoneyAmount)               // Obie te matody mają być rozpisane w dziueciczących klasach
+        public virtual bool IsDepositMoneyRequestValid(decimal aMoneyAmount)               // Obie te matody mają być rozpisane w dziueciczących klasach
         {
             return true;
         }
