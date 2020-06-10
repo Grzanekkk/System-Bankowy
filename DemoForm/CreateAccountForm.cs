@@ -69,7 +69,7 @@ namespace DemoForm
             }
             else if (ValidateCustomerBirthDate(birthDate))
             {
-                MessageBox.Show("You have to at least 18 years old to create an account in our bank");
+                MessageBox.Show("You have to be at least 18 years old to create an account in our bank");
                 return;
             }
 
