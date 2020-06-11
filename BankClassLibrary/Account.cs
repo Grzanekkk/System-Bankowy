@@ -298,7 +298,7 @@ namespace BankClassLibrary
             else
                 return false;
         }
-        public virtual bool IsDepositMoneyRequestValid(decimal aMoneyAmount)               // Obie te matody mają być rozpisane w dziueciczących klasach
+        public virtual bool IsDepositMoneyRequestValid(decimal aMoneyAmount)               // Obie te matody mają być rozpisane w dziedziczących klasach
         {
             return true;
         }

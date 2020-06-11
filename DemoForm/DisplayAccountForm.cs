@@ -64,28 +64,43 @@ namespace DemoForm
         private void MakeTransactionButton_Click(object sender, EventArgs e)
         {
             int transactionType = TransactionTypeComboBox.SelectedIndex;        // 0 = Deposit, 1 = Withdraw
-            decimal AmountOfMoney = Convert.ToDecimal(AmountOfTransactionTextBox.Text);
+            decimal amountOfMoney = Convert.ToDecimal(AmountOfTransactionTextBox.Text);
 
-            if (MakeTransactionButton.BackColor == Color.Red || AmountOfMoney == 0)
+            if (MakeTransactionButton.BackColor == Color.Red || amountOfMoney == 0)
             {
                 return;
             }
             
             if (transactionType == 1)                                           // Withdraw Transaction
             {
-                if (AmountOfMoney > myAccount.CurrentBalance || myAccount.CurrentBalance == 0)   // PRZY 2x TRUE NIE WYKOUJE SIĘ  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     
+                if (amountOfMoney > myAccount.CurrentBalance || myAccount.CurrentBalance == 0)   // PRZY 2x TRUE NIE WYKOUJE SIĘ  !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!                     
                 {
                     MessageBox.Show("You dont have enaugh money for this transaction");         // Za mało kasy na koncie
                     AmountOfTransactionTextBox.Text = myAccount.CurrentBalance.ToString();                                        
                 }
                 else                                
                 {
-                    myAccount.WithdrawMoney(AmountOfMoney);
+                    if (!myAccount.WithdrawMoney(amountOfMoney))
+                    {
+                        MessageBox.Show("Withdraw requets is not valid");
+                    }
+                    else
+                    {
+                        myAccount.WithdrawMoney(amountOfMoney);
+                    }
                 }
             }
             else                                                                // Deposit Transaction
             {
-                myAccount.DepositMoney(AmountOfMoney);               
+                if (!myAccount.DepositMoney(amountOfMoney))
+                {
+                    MessageBox.Show("Deposit requets is not valid");                 
+                }
+                else
+                {
+                    myAccount.DepositMoney(amountOfMoney);
+                }
+                             
             }
 
             CurrentBalancePanel.TextBoxInput = myAccount.CurrentBalance.ToString();
