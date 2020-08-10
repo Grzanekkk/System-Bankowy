@@ -1,3 +1,3 @@
 # System-Bankowy
-Ćwiczeniowy program C# do nauki programowania obiektowego... chyba
+Ćwiczeniowy program C# skupiony na programowaniu obiektowym
 Jakiś link: https://www.youtube.com/watch?v=dQw4w9WgXcQ
