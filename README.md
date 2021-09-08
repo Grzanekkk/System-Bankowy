@@ -1,2 +1,2 @@
 # System-Bankowy
-Ćwiczeniowy program C# skupiony na programowaniu obiektowym [COMPLETED]
+Its kinda old, but one of my first c# project with OPP [COMPLETED]
